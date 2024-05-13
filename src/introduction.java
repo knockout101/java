@@ -3,12 +3,14 @@ public class introduction
 {
     public static void main(String[] args)
     {
-        System.out.println("Hello World!");
-        newMethod();
+        int highScorePos = 43;
+        String name = "Tristan";
+
+        newMethod(name, highScorePos);
     }
 
-    public static void newMethod()
+    public static void newMethod(String name, int position)
     {
-        System.out.println("Inside the second method");
+        System.out.println(name + " is in " + position);
     }
 }
