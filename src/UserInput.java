@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class UserInput {
     public static void main(String[] args)
     {
@@ -28,6 +30,11 @@ public class UserInput {
 
     public static String getInputFromScanner(int currentYear)
     {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Hi, what's your name?");
+        String name = scanner.nextLine();
+        System.out.println("Hi " + name + ", thanks");
         return "";
     }
 }
