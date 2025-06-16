@@ -1,0 +1,22 @@
+- fill out the pdf quiz on 1
+
+- Lecture 2
+    - read Chapter 1
+    - Waterfall vs AGILE
+    - Software Development Life Cycle (SDLC)
+        - Phase 1 (Analysis)
+            - Understand the problem
+            - Create requirements specifications document
+            - Contractual agreement between IT and Stake holders (business)
+        - Planning 
+            - Create a design per the Req. Spec.
+            - Create Flowchart, pseudocode, UML, other diagrams
+        - Implementation
+            - coding the design in a programming language like Java
+        - Testing
+            - involves test cases
+
+- Lecture 3
+    - Chapter 2: Elementary Programming
+        - Covered: 2.2, 2.3, 2.4, 2.5, 2.6, 2.7, 2.8, 2.13 
+        - Not covered: 2.10, 2.11, 2.12, 
