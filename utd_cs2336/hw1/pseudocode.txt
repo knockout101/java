@@ -1,0 +1,96 @@
+public class hw_2_13
+
+    // double Sum starting at 0
+
+    // Previous value set to 0
+    
+    // Ask user for monthly savings
+
+    // formula: Sum = (Monthly Savings + Sum) * (1 + Interest Rate)
+
+    // Iterate the formula 6 times for the 6 months of savings
+
+    // display the account value after the sixth month on the console
+
+    // end
+
+
+public class hw_3_1
+
+    // double a, b, c all equal to 0
+
+    // prompt user for 3 values separated by spaces ("a b c")
+
+    // Call .nextDouble 3 times filling a, b, and c with their respective inputs
+
+    // double discriminant equals Math.pow(b, 2) - (4 * a * c)
+
+    // calculate the roots from the equations r1 = (-b + Math.pow(determinant, 0.5)) / (2 * a) and
+                                              r2 = (-b - Math.pow(determinant, 0.5)) / (2 * a)
+
+    // if determinant is greater than 0 display both -r1 and -r2 (negatives because x - a = 0 -> x = -a)
+
+    // if determinant is zero display 1 zero (because r1 = r2)
+
+    // Otherwise display "The equation has no real roots"
+
+public class hw_3_9
+
+    // int i1, i2, i3, i4, i5, i6, i7, i8, i9 all equal to 0
+
+    // prompt user for the first 9 digits of an ISBN as an integer
+
+    // String temp_integer equal to return value of .nextLine()
+
+    // if the String.length() is not equal to 9, exit program with the error message "Incorrect number of digits"
+
+    // int checksum equal to 0
+
+    // call Integer.parseInt() on temp_integer.charAt(0) and multiply with 1 add to checksum
+    // call Integer.parseInt() on temp_integer.charAt(1) and multiply with 2 add to checksum
+    // call Integer.parseInt() on temp_integer.charAt(2) and multiply with 3 add to checksum
+    // call Integer.parseInt() on temp_integer.charAt(3) and multiply with 4 add to checksum
+    // call Integer.parseInt() on temp_integer.charAt(4) and multiply with 5 add to checksum
+    // call Integer.parseInt() on temp_integer.charAt(5) and multiply with 6 add to checksum
+    // call Integer.parseInt() on temp_integer.charAt(6) and multiply with 7 add to checksum
+    // call Integer.parseInt() on temp_integer.charAt(7) and multiply with 8 add to checksum
+    // call Integer.parseInt() on temp_integer.charAt(8) and multiply with 9 add to checksum
+
+    // do checksum is equal to the checksum modulus 11
+
+    // if checksum is equal to 10 concatenate "X" to temp_integer and display it to the console
+    
+    // else make checksum a new String, concatenate it to temp_integer, and display it to the console 
+
+public class hw_3_28
+
+    // double x1, y1, width1, height1
+    // double x2, y2, width2, height2
+
+    // prompt user for rect1 center coordinates (x1, y1) and its length and width (length1, width1)
+    // prompt user for rect2 center coordinates (x2, y2) and its legnth and width (length2, width2)
+
+    // int counter equals 0
+
+    // double xvert equals x2 - (width2 / 2) 
+    // double yvert equals y2 - (length2 / 2)
+
+    // if (xvert, yvert) is within rect1 increment counter
+
+    // set xvert equal to x2 + (width2 / 2)
+
+    // if new (xvert, yvert) is within rect1 increment counter 
+
+    // set yvert equal to y2 + (length2 / 2)
+
+    // if new (xvert, yvert) is within rect1 increment counter 
+
+    // set yvert equal to x2 - (width2 / 2)
+
+    // if new (xvert, yvert) is within rect1 increment counter 
+
+    // if counter is 4 display that r2 is inside r1
+    
+    // else if counter is greater than 0 display that r2 overlaps r1 
+
+    // else display r2 does not overlap r1
