@@ -65,7 +65,7 @@ public class hw_3_9
 public class hw_3_28
 
     // double x1, y1, width1, height1
-    // double x2, y2, width2, height2
+    // double x2, y2, width2, height2    
 
     // prompt user for rect1 center coordinates (x1, y1) and its length and width (length1, width1)
     // prompt user for rect2 center coordinates (x2, y2) and its legnth and width (length2, width2)

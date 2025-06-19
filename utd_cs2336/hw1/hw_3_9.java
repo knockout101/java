@@ -7,28 +7,41 @@ public class hw_3_9 {
 
         // String temp_integer equal to return value of .nextLine()
         Scanner input = new Scanner(System.in);
-        String temp_integer = input.nextLine();
-
-        // if the String.length() is not equal to 9, exit program with the error message "Incorrect number of digits"
-        if(temp_integer.length() != 9) {
-            System.out.println("Incorrect number of digits");
-            return;
-        }
+        int temp_integer = input.nextInt();
 
         // int checksum equal to 0
         int checksum = 0;
 
-        // call Integer.parseInt() on temp_interger.charAt(index) and 
-        // multiple by (index + 1) and add to checksum 9 times
-        checksum += Integer.parseInt(String.valueOf(temp_integer.charAt(0))) * 1;
-        checksum += Integer.parseInt(String.valueOf(temp_integer.charAt(1))) * 2;
-        checksum += Integer.parseInt(String.valueOf(temp_integer.charAt(2))) * 3;
-        checksum += Integer.parseInt(String.valueOf(temp_integer.charAt(3))) * 4;
-        checksum += Integer.parseInt(String.valueOf(temp_integer.charAt(4))) * 5;
-        checksum += Integer.parseInt(String.valueOf(temp_integer.charAt(5))) * 6;
-        checksum += Integer.parseInt(String.valueOf(temp_integer.charAt(6))) * 7;
-        checksum += Integer.parseInt(String.valueOf(temp_integer.charAt(7))) * 8;
-        checksum += Integer.parseInt(String.valueOf(temp_integer.charAt(8))) * 9;
+        // temp integer for holding the remainder
+        int temp = 0;
+
+        // calculate the new temp value by modulus operation and multiple by the digit positon
+        temp = temp_integer % 10;
+        checksum += temp * 1;
+
+        temp = temp_integer % 10;
+        checksum += temp * 2;
+
+        temp = temp_integer % 10;
+        checksum += temp * 3;
+
+        temp = temp_integer % 10;
+        checksum += temp * 4;
+
+        temp = temp_integer % 10;
+        checksum += temp * 5;
+
+        temp = temp_integer % 10;
+        checksum += temp * 6;
+
+        temp = temp_integer % 10;
+        checksum += temp * 7;
+
+        temp = temp_integer % 10;
+        checksum += temp * 8;
+
+        temp = temp_integer % 10;
+        checksum += temp * 9;
 
         // do checksum is equal to the checksum modulus 11
         checksum %= 11;
