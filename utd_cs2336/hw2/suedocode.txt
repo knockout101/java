@@ -1,0 +1,43 @@
+public class hw_4_19
+
+    // prompt user for the first 9 digits of an ISBN as an integer
+
+    // String temp_integer equal to return value of .nextLine()
+
+    // if the String.length() is not equal to 9, exit program with the error message "Incorrect number of digits"
+
+    // int checksum equal to 0
+
+    // loop 9 times calling Integer.parseInt() on each character from the temp_integer string
+
+    // do checksum is equal to the checksum modulus 11
+
+    // if checksum is equal to 10 concatenate "X" to temp_integer and display it to the console
+    
+    // else make checksum a new String, concatenate it to temp_integer, and display it to the console 
+
+
+public class hw_5_22
+
+    // double loan_amount equal 0
+    // int number_of_years equal 0
+    // double annual_rate equal 0
+
+    // ask user for loan amount, number of years on the loan, and the annual rate
+
+    // This interest rate will take into account the annual to monthly rate conversion
+    // monthly payment formula M = (P * r/12 * Math.pow(1 + r/12, 12*t)) / (Math.pow(1 + r/12, 12*t) - 1)
+
+    // use equation above to calculate the monthly payments 
+
+    // display a header for the table of values generated when iterating, balance, principle, interest and payment #
+
+    // iterate number_of_years * 12 times 
+    // displaying the payment cycle number 
+    // calculating and displaying the new principle based on the interest deduction 
+    // and the overall balance per payment cycle 
+
+    // if the last payment is greater than 0, add it to the final payment cycle expense
+    // making the balance 0 after the final payment
+
+public class hw_6_31
