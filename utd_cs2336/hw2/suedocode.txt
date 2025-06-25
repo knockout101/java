@@ -41,3 +41,91 @@ public class hw_5_22
     // making the balance 0 after the final payment
 
 public class hw_6_31
+
+    // define the following methods
+
+    /** Return true if the card number is valid */
+    public static boolean isValid(long number)
+
+        // int sum equal to 0
+
+        // loop through the card number and calculate using the SumOfDoubleEvenPlace method, from the right to the left,
+        // every second card digit, summing them up in "sum" variable
+
+        // Using the sumOfOddPlace method to calculate the odd place values and add it to "sum"
+
+        // return "sum" is divisible by 10 doing the modulus of "sum" and 10 equal to 0
+
+
+
+    /** Get the result from Step 2 */
+    public static int sumOfDoubleEvenPlace(long number)
+
+        // int temp equal to 0
+
+        // for loop through number starting at int i equals 1, if i is less than getSize(number), for i + 2
+        // incrementing across the number's even positions
+
+        // in the loop extract the digit by doing number modulus Math.pow(10, i)
+
+    /** Return this number if it is a single digit, otherwise,
+    * return the sum of the two digits */
+    public static int getDigit(int number)
+
+        // int doubled equals number * 2
+
+        // if doubled is less than 9 return doubled
+
+        // return (doubled / 10) + (doubled % 10)
+
+    /** Return sum of odd-place digits in number */
+    public static int sumOfOddPlace(long number)
+
+        // int temp equal to 0
+
+        // for loop through number, using int i equal to 0, if i is less than getSize(number), incrementing by i + 2
+        // this catches all odd values 
+
+        // within the loop, create int x equal to number modulus Math.pow(10, i) to extract the digit at this location
+        
+        // sum the int x into int temp 
+
+        // after the loop ends, return int x 
+
+    /** Return true if the digit d is a prefix for number */
+    public static boolean prefixMatched(long number, int d)
+
+        // int temp equal to Math.pow(10, getSize(number) - 1) to create a value as large as the card number
+
+        // temp equal to number / temp to extract the last digit and truncate the rest of the number
+
+        // return temp is equal to int d
+
+    /** Return the number of digits in d */
+    public static int getSize(long d)
+
+        // int counter equal to 0
+
+        // do a while loop with the condition that number / 10 is not equal to 0
+
+        // within the loop, iteratively increment the counter by 1 and do number /= 10 to continue 
+        // to push the number down until its only 1 digit left, which should end the while loop
+
+        // return counter + 1, adding the last digit that was not counted
+
+    /** Return the first k number of digits from number. If the
+    * number of digits in number is less than k, return number. */
+    public static long getPrefix(long number, int k)
+
+        // int temp equal to getSize(number) - k to get the complementary value of the expected digits
+        // which are the digits to remove from number from right to left 
+
+        // if temp is less than or equal to 0 return number 
+
+        // do for loop starting with int i equal to 0, if i is less than temp, incrementing by 1
+
+        // in the loop, do number /= 10, temp number of times as each division removes 1 digit
+        
+        // after the loop ends return number
+
+    // prompt the user for a card number between 13 and 16 digits (usually 16 digits)
