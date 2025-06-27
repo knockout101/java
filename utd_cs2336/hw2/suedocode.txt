@@ -49,14 +49,11 @@ public class hw_6_31
 
         // int sum equal to 0
 
-        // loop through the card number and calculate using the SumOfDoubleEvenPlace method, from the right to the left,
-        // every second card digit, summing them up in "sum" variable
+        // Using sumOfDoubleEvenPlace calculate the second step of the luhn's algorithm, adding to "sum"
 
         // Using the sumOfOddPlace method to calculate the odd place values and add it to "sum"
 
         // return "sum" is divisible by 10 doing the modulus of "sum" and 10 equal to 0
-
-
 
     /** Get the result from Step 2 */
     public static int sumOfDoubleEvenPlace(long number)
@@ -66,7 +63,13 @@ public class hw_6_31
         // for loop through number starting at int i equals 1, if i is less than getSize(number), for i + 2
         // incrementing across the number's even positions
 
-        // in the loop extract the digit by doing number modulus Math.pow(10, i)
+        // in the loop extract, create int x equal to getPrefix(number, getSize(number) - i) modulus 10, this extracts the current digit 
+
+        // replace x with getDigit(x)
+
+        // sum up each digit into temp
+
+        // after the loop return temp
 
     /** Return this number if it is a single digit, otherwise,
     * return the sum of the two digits */
@@ -86,7 +89,7 @@ public class hw_6_31
         // for loop through number, using int i equal to 0, if i is less than getSize(number), incrementing by i + 2
         // this catches all odd values 
 
-        // within the loop, create int x equal to number modulus Math.pow(10, i) to extract the digit at this location
+        // within the loop, create int x equal to getPrefix(number, getSize(number) - i) modulus 10, this extracts the current digit
         
         // sum the int x into int temp 
 
@@ -129,3 +132,5 @@ public class hw_6_31
         // after the loop ends return number
 
     // prompt the user for a card number between 13 and 16 digits (usually 16 digits)
+
+    // display if the card number is valid or not to the user
