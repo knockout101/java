@@ -1,0 +1,61 @@
+public class hw_7_11 
+    /* Computes the standard deviation of numbers */
+
+    /* Compute the deviation of double values */
+    // public static double deviation(double[] x)
+        // int n equal to 0
+        // double deviation equal to 0
+        // double mean equal to return value of mean() method
+        // deviation equal to 0
+        // for each loop over the double array
+            // in loop sum up the difference in the element and the mean and square it, inside deviation
+            // also increment n by 1 to keep track of the number of elements in the array1
+        
+        // divide deviation by the number of elements (n) minus 1
+
+        // set deviation equal to the square root of deviation
+
+        // return deviation
+
+    /* Compute the mean of an array of double values */
+    // public static double mean(double[] x)
+        // double mean equal to 0
+        // int n equal to 0
+        // for each loop over the array
+            // in loop sum up the elements into the mean variable
+            // increment n by 1 to keep track of the number of elements in the array 
+        
+        // set mean equal to mean divided by number of elements (n)
+
+        // return mean 
+
+    
+public class hw_7_16
+
+    // create a Random object seeded with the current System time
+    // int sizeOfArray equals to 100,000
+    // create int array of size sizeOfArray
+    // loop through the array and initalize each element to a random value between 1 and 100,000
+    // int key equal to random number between 1 and 100,000
+
+    // long startTime equal to System.currentTimeMillis()
+    // perform linearSearch through the unsorted array to find the key
+    // long endTime equal to System.currentTimeMillis() 
+    // long linearSearchTime equal to difference in startTime and endTime
+
+    // call Arrays.sort() on the int array
+
+    // startTime equal to System.currentTimeMillis()
+    // perform binarySearch through the sorted array to find the key
+    // endTime equal to System.currentTimeMillis()
+    // long binarySearchTime equal to difference in startTime and endTime 
+
+    // display results of the two searchs
+
+public class hw_7_19
+
+    /* returns true if the list is already sorted in ascending order */
+    // public static boolean isSorted(int[] list)
+        // int previousValue equal to 0
+        // for each loop over the list
+            // if 
