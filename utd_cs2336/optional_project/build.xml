@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="MyGsonProject" default="dist" basedir=".">
+    <!-- Define directories -->
+    <property name="src.dir" value="src"/>
+    <property name="lib.dir" value="lib"/>
+    <property name="build.dir" value="build"/>
+    <property name="dist.dir" value="dist"/>
+    <property name="main-class" value="Weather"/> 
+
+    <!-- Classpath for compilation -->
+    <path id="project.classpath">
+        <fileset dir="${lib.dir}" includes="*.jar"/>
+    </path>
+
+    <!-- Initialize directories -->
+    <target name="init">
+        <mkdir dir="${build.dir}"/>
+        <mkdir dir="${dist.dir}"/>
+    </target>
+
+    <!-- Compile Java files -->
+    <target name="compile" depends="init">
+        <javac srcdir="${src.dir}" destdir="${build.dir}" includeantruntime="false">
+            <classpath refid="project.classpath"/>
+        </javac>
+    </target>
+
+    <!-- Create JAR file -->
+    <target name="dist" depends="compile">
+        <jar destfile="${dist.dir}/${ant.project.name}.jar" basedir="${build.dir}">
+            <manifest>
+                <attribute name="Main-Class" value="${main-class}"/>
+            </manifest>
+            <!-- Include Gson in the JAR (optional, if you want a fat JAR) -->
+            <zipfileset src="${lib.dir}/gson-2.6.2.jar" excludes="META-INF/*.SF, META-INF/*.DSA, META-INF/*.RSA"/>
+        </jar>
+    </target>
+
+    <!-- Clean build directories -->
+    <target name="clean">
+        <delete dir="${build.dir}"/>
+        <delete dir="${dist.dir}"/>
+    </target>
+
+    <!-- Run the program -->
+    <target name="run" depends="dist">
+        <java jar="${dist.dir}/${ant.project.name}.jar" fork="true"/>
+    </target>
+</project>
