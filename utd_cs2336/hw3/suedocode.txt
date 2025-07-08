@@ -56,6 +56,31 @@ public class hw_7_19
 
     /* returns true if the list is already sorted in ascending order */
     // public static boolean isSorted(int[] list)
-        // int previousValue equal to 0
-        // for each loop over the list
-            // if 
+        // int n equal to list[0] + 1 (to add the extra element for the first element that is skipped)
+        // int previousValue equal to list[1] - start of list
+
+        // for loop over the list for the condition index < nstarting at 2 NOT 0 or 1
+        // skip the first element in the list
+            // if previousValue is greater than the current element return false
+
+        // if the loop exits successfully return true
+
+public class hw_7_32
+    
+    /* method that partitions the list using the first element */
+    // public static int partition(int[] list)
+        // int n equal to list[0]
+        // int pivot equal to list[1]
+        // int end equal to n
+        // int start equal to 1
+
+        // int[] tempList equal to Arrays.copyOf(list, n + 1)
+
+        // for loop with index starting at 2, index < n + 1 incrementing by 1
+            // if tempList[index] is less than or equal to pivot
+                // list[start++] equal to tempList[index] 
+            // else if tempList[index] is greater than pivot 
+                // list[end--] equal to tempList[index]
+        // after the loop, list[start] equal to pivot
+    
+    // return start
