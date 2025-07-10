@@ -30,7 +30,7 @@ public class WeatherGUI extends JFrame implements ActionListener, FocusListener 
         
         // Create a JPanel
         panel = new JPanel();
-        frame.add(panel);
+        add(panel);
         
         // Set layout manager
         panel.setLayout(new FlowLayout());
@@ -49,7 +49,7 @@ public class WeatherGUI extends JFrame implements ActionListener, FocusListener 
         weatherButton.addActionListener(this);
 
         // Set visibility
-        frame.setVisible(true);
+        setVisible(true);
         
     }
     // Helper method to perform HTTP GET request
@@ -78,41 +78,14 @@ public class WeatherGUI extends JFrame implements ActionListener, FocusListener 
             JOptionPane.showMessageDialog(null, "Please enter a city name.");
             return;
         }
-        
-        // API key for geocode.maps.co (for coordinates)
-        String coordApiKey = "686da940ca91d239180481mvba0feb6";
-        // geocode.maps.co API URL for coordinates *EXAMPLE*:
-        // https://geocode.maps.co/search?q={address}&api_key={API key}
-        String coordUrlString = "https://geocode.maps.co/search?q=" + zipcode + "&api_key=" + coordApiKey;
-
-        // Get the return value from geocode.maps.co API
-        CoordResponse coordResponse;
-        try {
-            // Make the API request and get the response
-            String response = httpGet(coordUrlString);
-            
-            // Parse the JSON response
-            Gson gson = new Gson();
-            coordResponse = gson.fromJson(response, CoordResponse.class);
-            
-            // Check if coordinates were found
-            if (coordResponse.lat == null || coordResponse.lon == null) {
-                JOptionPane.showMessageDialog(null, "Could not find coordinates for the city: " + zipcode);
-                return;
-            }
-        } catch (Exception ex) {
-            JOptionPane.showMessageDialog(null, "Error fetching coordinates: " + ex.getMessage());
-            return;
-        }
 
         // Create a URL for the Weather API request
         String weatherApiKey = "3a5a2e8025a0f5c7427858342ebbf3ee"; // "Default" API key
         // OpenWeatherMap API URL for current weather data *EXAMPLE*:
-        // https://api.openweathermap.org/data/3.0/onecall?lat={lat}&lon={lon}&exclude={part}&appid={API key}
-        String urlString = "https://api.openweathermap.org/data/3.0/onecall?lat=" 
-                         + coordResponse.lat
-                         + "&lon=" + coordResponse.lon
-                         // excluding exclude call (optional)
+        // https://api.openweathermap.org/data/2.5/weather?={lat}&lon={lon}&exclude={part}&appid={API key}
+        String urlString = "https://api.openweathermap.org/data/2.5/weather?" 
+                         + "zip=" + zipcode + ",US"
+                         + "&units=imperial" // Use imperial units for temperature
                          + "&appid=" + weatherApiKey;
         
         try {
@@ -124,7 +97,14 @@ public class WeatherGUI extends JFrame implements ActionListener, FocusListener 
             WeatherResponse weatherResponse = gson.fromJson(response, WeatherResponse.class);
             
             // Display the weather information
-            JOptionPane.showMessageDialog(null, "Weather in " + zipcode + ": " + weatherResponse.weather[0].description);
+            JOptionPane.showMessageDialog(null,
+                      "Weather in " + zipcode + ": " + weatherResponse.weather[0].description + "\n" 
+                    + "Temperature: " + weatherResponse.main.temp + "\u00B0F\n"
+                    + "Feels Like: " + weatherResponse.main.feels_like + "\u00B0F\n"
+                    + "Min Temperature: " + weatherResponse.main.temp_min + " \u00B0F\n"
+                    + "Max Temperature: " + weatherResponse.main.temp_max + "\u00B0F\n"
+                    + "Pressure: " + weatherResponse.main.pressure + " hPa\n"
+                    + "Humidity: " + weatherResponse.main.humidity + "%");
         } catch (Exception ex) {
             JOptionPane.showMessageDialog(null, "Error fetching weather data: " + ex.getMessage());
         }
@@ -159,9 +139,27 @@ class CoordResponse {
 
 class WeatherResponse {
     Weather[] weather;
+    Main main;
 
     class Weather {
         String description;
     }
 
+    class Main {
+        double temp;
+        double feels_like;
+        double temp_min;
+        double temp_max;
+        int pressure;
+        int humidity;
+
+        public Main(double temp, double feels_like, double temp_min, double temp_max, int pressure, int humidity) {
+            this.temp = temp;
+            this.feels_like = feels_like;
+            this.temp_min = temp_min;
+            this.temp_max = temp_max;
+            this.pressure = pressure;
+            this.humidity = humidity;
+        }
+    }
 }

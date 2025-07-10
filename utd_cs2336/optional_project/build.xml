@@ -3,7 +3,7 @@
     <property name="src.dir" value="src"/>
     <property name="lib.dir" value="lib"/>
     <property name="build.dir" value="build"/>
-    <property name="main-class" value="Weather"/> 
+    <property name="main-class" value="WeatherGUI"/> 
 
     <!-- Classpath for compilation and runtime -->
     <path id="project.classpath">
