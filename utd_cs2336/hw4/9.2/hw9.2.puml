@@ -1,0 +1,15 @@
+@startuml 
+
+skinparam classAttributeIconSize 0
+hide circle
+
+class Stock {
+    -symbol: String
+    -name: String
+    -previousClosingPrice: double
+    -currentPrice: double
+    +Stock(symbol: String, name: String)
+    +getChangePercent(): double
+}
+
+@enduml

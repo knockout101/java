@@ -1,9 +1,10 @@
-<project name="Weather" default="compile" basedir=".">
+<project name="OptionalProject" default="compile" basedir=".">
     <!-- Define directories -->
     <property name="src.dir" value="src"/>
     <property name="lib.dir" value="lib"/>
     <property name="build.dir" value="build"/>
-    <property name="main-class" value="WeatherGUI"/> 
+    <property name="part1" value="WeatherGUI"/> 
+    <property name="part2" value="MyPercBot"/>
 
     <!-- Classpath for compilation and runtime -->
     <path id="project.classpath">
@@ -29,9 +30,17 @@
     </target>
 
     <!-- Run the program -->
-    <target name="run" depends="compile">
-        <java classname="${main-class}" fork="true">
+    <target name="run-part1" depends="compile">
+        <java classname="${part1}" fork="true">
             <classpath refid="project.classpath"/>
+        </java>
+    </target>
+
+    <!-- Run the program with part2 -->
+    <target name="run-part2" depends="compile">
+        <java classname="${part2}" fork="true">
+            <classpath refid="project.classpath"/>
+            <arg value="part2"/>
         </java>
     </target>
 </project>

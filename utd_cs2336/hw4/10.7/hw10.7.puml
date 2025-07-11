@@ -1,0 +1,40 @@
+@startuml 
+
+skinparam classAttributeIconSize 0
+hide circle
+
+class ATM {
+    -accounts: ArrayList<Account>
+    -currentAccount: Account
+    -menu: String
+    +ATM()
+    +addAccount(id: int, initialBalance: double): void
+    +login(id: int): boolean
+    +logout(): void
+    +withdraw(amount: double): boolean
+    +deposit(amount: double): boolean
+    +getBalance(): double
+}
+
+class Account {
+    -id: int {default = 0}
+    -balance: double {default = 0.0}
+    -annualInterestRate: double {default = 0.0}
+    -dateCreated: Date
+    +Account()
+    +Account(id: int, initialBalance: double)
+    +getId(): int
+    +getBalance(): double
+    +getAnnualInterestRate(): double
+    +getDateCreated(): Date
+    +getMonthlyInterestRate(): double
+    +setAnnualInterestRate(annualInterestRate: double): void
+    +setBalance(balance: double): void
+    +setAnnualInterestRate(annualInterestRate: double): void
+    +withdraw(amount: double): void
+    +deposit(amount: double): void
+}
+
+ATM *-- Account
+
+@enduml
