@@ -1,0 +1,209 @@
+public class hw9.1
+    // main
+        // create two rectangles one 4 x 40 and another 3.5 x 35.9
+        // display width, height, area, and perimeter of each
+
+class Rectangle
+    // double width, height
+
+    // default constructor
+    // value constructor given width and height
+
+    // public methods
+    // getArea()
+        // return width * height
+    // getPerimeter()
+        // return 2 * width + 2 * height
+
+
+
+
+public class hw9.2
+    // main
+        // create a Stock given symbol "ORCL" and name "Oracle Corporation"
+        // set previous closing price to 34.5
+        // set current price to 34.35
+        // display price-change percentage
+
+class Stock
+    // String symbol, name
+    // double previousClosingPrice, currentPrice
+
+    // value constructor given symbol and name
+
+    // public methods 
+    // getChangePercent()
+        // return (100 * currentPrice / previousClosingPrice) - 100
+    // setPreviousClosingPrice(double price)
+        // this.previousClosingPrice = price 
+    // setCurrentPrice(double price)
+        // this.currentPrice = price
+
+
+
+
+public class hw9.7
+    // main
+        // create an account with id = 1122 and balance = 20,000 and annualInterestRate = 4.5%
+        // withdraw 2,500
+        // deposit 3,000
+        // print balance, monthly interest, and the date this account was created
+
+class Account
+    // int id   (default = 0)
+    // double balance, annualInterestRate   (default = 0)
+    // Date dateCreated 
+
+    // default constructor
+    // value constructor given id and initial balance 
+        // use setters for assigning parameters to fields
+
+    // public methods
+    // getId()
+        // return id
+    // setId(int id)
+        // this.id = id
+    // getBalance()
+        // return balance 
+    // setBalance(double newBalance)
+        // this.balance = newBalance 
+    // getAnnualInterestRate()
+        // return annualInterestRate
+    // setAnnualInterestRate(double newRate)
+        // newRate is input as the percentage, so it will need to be divided by 100
+        // this.annualInterestRate = newRate / 100
+    // getDateCreated()
+        // return dateCreated
+    // getMonthlyInterestRate()
+        // return annualInterestRate / 12
+    // withdraw(double amount)
+        // if amount is > balance withdraw fails returning false
+        // balance -= amount
+    // deposit(double amount)
+        // balance += amount
+    
+
+     
+
+public class hw9.10
+    // main 
+        // prompt user for a, b, c values
+        // construct QuadraticEquation with the user inputs
+        // if the discriminant is positive, display the two roots
+        // else if the discriminant is 0, display one root (either)
+        // else display "The equation has no roots
+
+class QuadraticEquation
+    // double a, b, c 
+
+    // value constructor given a, b, c 
+
+    // getA()
+        // return a 
+    // getB()
+        // return b 
+    // getC()
+        // return c 
+    // getDiscriminant()
+        // return Math.pow(b, 2) - (4 * a * c)
+    // getRoot1()
+        // return ((-1) * b + getDiscriminant()) / (2 * a)
+    // getRoot2()
+        // return ((-1) * b - getDiscriminant()) / (2 * a)
+
+
+
+
+import Account from 9.7
+
+public class hw10.7
+    // main 
+        // create ATM object
+        // loop adding 10 accounts with id's 0 to 9 all with initial balances of 100
+        // start loop while currentAccount is null
+            // prompt user for an ID to match against
+            // attempt login(id) of user input
+            // start loop while currentAccount != null
+                // prompt user for input using printMenu()
+                // switch(input)
+                    // if view balance 
+                        // ATM.getBalance()
+                    // if withdraw
+                        // ATM.withdraw()
+                    // if deposit
+                        // ATM.deposit
+                    // if exit menu is called
+                        // ATM.logout()
+
+class ATM
+    // ArrayList<Account> accounts = new ArrayList<Account>
+    // String menu
+        // 1 - view the current balance
+        // 2 - withdraw money
+        // 3 - deposit money
+        // 4 - exit menu
+    // Account currentAccount = null
+
+    // default constructor
+
+    // addAccount(int id, double initialBalance)
+        // add Account(id, initialBalance) to accounts
+    // login(int id)
+        // if id matches any id in accounts
+            // set this.currentAccount = id matched account
+            // return true
+        // else return false
+    // logout()
+        // set this.currentAccount to null
+    // withdraw(double amount)
+        // return currentAccount.withdraw(amount)
+    // deposit(double amount)
+        // currentAccount.deposit(amount)
+    // getBalance()
+        // return currentAccount.balance
+
+
+
+
+public class hw10.8
+    // main 
+        // create Tax object given SINGLE_FILER filingStatus, 2001 brackets, 2001 rates
+        // create Tax object given SINGLE_FILER filingStatus, 2009 brackets, 2009 rates
+        // 2001 Tax object first
+        // for loop through taxableIncome starting at 50,000 incrementing by 1000 going to 60,000 (inclusive)
+            // for loop through each filingStatus starting with 0 going to 4 (exclusive)
+                // getTax(filingStatus, taxableIncome)
+        // 2009 Tax object last
+        // for loop through taxableIncome starting at 50,000 incrementing by 1000 going to 60,000 (inclusive)
+            // for loop through each filingStatus starting with 0 going to 4 (exclusive)
+                // getTax(filingStatus, taxableIncome)
+
+class Tax
+    // create constants
+    // int filingStatus
+    // int[][] brackets (given in problem)
+    // double taxableIncome
+    // double[] rates (given in problem)
+
+    // default constructor
+    // value constructor given filingStatus, brackets, rates
+        // use setters for passing parameters to fields
+    // getBrackets()
+        // return brackets
+    // getFilingStatus()
+        // return filingStatus
+    // getRates()
+        // return rates
+    // getTaxableIncome()
+        // return taxableIncome
+    // getTax(int filingStatus, double taxableIncome)
+        // find rate using filingStatus and taxableIncome
+        // return taxableIncome * rate
+    // setFilingStatus(int filingStatus)
+        // set this.filingStatus = filingStatus
+    // setBrackets(int[][] brackets)
+        // set this.brackets = brackets
+    // setRates(double[] rates)
+        // set this.rates = rates 
+    // setTaxableIncome(double taxableIncome)
+        // set this.taxableIncome = taxableIncome

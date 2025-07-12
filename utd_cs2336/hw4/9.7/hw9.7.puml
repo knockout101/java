@@ -18,7 +18,7 @@ class Account {
     +setAnnualInterestRate(annualInterestRate: double): void
     +setBalance(balance: double): void
     +setAnnualInterestRate(annualInterestRate: double): void
-    +withdraw(amount: double): void
+    +withdraw(amount: double): boolean
     +deposit(amount: double): void
 }
 

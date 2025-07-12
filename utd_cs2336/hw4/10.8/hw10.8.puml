@@ -23,7 +23,6 @@ class Tax {
     +setBrackets(brackets: int[][]): void
     +setRates(rates: double[]): void
     +setTaxableIncome(taxableIncome: double): void
-    
 }
 
 
