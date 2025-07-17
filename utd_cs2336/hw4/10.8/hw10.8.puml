@@ -25,6 +25,5 @@ class Tax {
     +setTaxableIncome(taxableIncome: double): void
 }
 
-
-
 @enduml
+
