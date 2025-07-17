@@ -1,20 +1,27 @@
+// java.swing imports
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 import javax.swing.JFrame;
+// java.awt imports
 import java.awt.FlowLayout;
-import com.google.gson.Gson;
-import com.google.gson.annotations.SerializedName;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.FocusEvent;
 import java.awt.event.FocusListener;
+// gson imports
+import com.google.gson.Gson;
+import com.google.gson.annotations.SerializedName;
+// java.net import
 import java.net.HttpURLConnection;
+import java.net.URL;
+// java.io imports
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.Serial;
+import java.io.InputStreamReader;
 
 public class WeatherGUI extends JFrame implements ActionListener, FocusListener {
 
@@ -246,10 +253,10 @@ public class WeatherGUI extends JFrame implements ActionListener, FocusListener 
 
     // Helper method to perform HTTP GET request
     private static String httpGet(String urlString) throws Exception {
-        java.net.URL url = new java.net.URL(urlString);
+        URL url = new URL(urlString);
         HttpURLConnection conn = (HttpURLConnection) url.openConnection();
         conn.setRequestMethod("GET");
-        java.io.BufferedReader in = new java.io.BufferedReader(new java.io.InputStreamReader(conn.getInputStream()));
+        BufferedReader in = new BufferedReader(new InputStreamReader(conn.getInputStream()));
         String inputLine;
         StringBuilder content = new StringBuilder();
         while ((inputLine = in.readLine()) != null) {
