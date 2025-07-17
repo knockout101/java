@@ -20,7 +20,6 @@ import java.net.URL;
 // java.io imports
 import java.io.BufferedReader;
 import java.io.FileReader;
-import java.io.Serial;
 import java.io.InputStreamReader;
 
 public class WeatherGUI extends JFrame implements ActionListener, FocusListener {

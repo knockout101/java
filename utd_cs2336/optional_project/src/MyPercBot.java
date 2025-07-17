@@ -8,7 +8,7 @@ public class MyPercBot extends PircBot {
         bot.setName("MyPircBot");
         bot.connect("irc.us.libera.chat");
         bot.joinChannel("#CS2336");
-        bot.sendMwessage("#CS2336", "Hello, I am MyPircBot! Type !help for commands.");
+        bot.sendMessage("#CS2336", "Hello, I am MyPircBot! Type !help for commands.");
     }
 
     public MyPercBot() {
@@ -23,6 +23,9 @@ public class MyPercBot extends PircBot {
             sendMessage(channel, "Hello " + sender + "!");
         } else if (message.equalsIgnoreCase("!help")) {
             sendMessage(channel, "Available commands: !hello, !help");
+        } else if (message.equalsIgnoreCase("!weather")) {
+            
+        
         } else {
             sendMessage(channel, "I don't understand that command.");
         }
