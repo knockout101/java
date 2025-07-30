@@ -1,0 +1,44 @@
+@startuml
+
+skinparam ClassAttributeIconSize 0
+hide circle
+
+class Person {
+    -name: String
+    -address: String 
+    -phoneNumber: String
+}
+
+class Student {
+    -classStatus: ClassStatus
+}
+
+class Employee {
+    -office: String
+    -salary: double
+    -dateHired: MyDate
+}
+
+class Faculty {
+    -officeHours: String
+    -rank: String
+}
+
+class Staff {
+    -title: String
+}
+
+enum ClassStatus <<Enum>> {
+    FRESHMAN
+    SOPHOMORE
+    JUNIOR
+    SENIOR
+}
+
+Person <-- Student
+Person <-- Employee
+Employee <-- Faculty
+Employee <-- Staff
+Student -- ClassStatus
+
+@enduml
