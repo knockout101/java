@@ -1,0 +1,11 @@
+@startuml 
+
+skinparam classAttributeIconSize 0
+hide circle
+
+class MyStack <<extends ArrayList>> {
+    +push(str: String)
+    +pop(): String
+}
+
+@enduml

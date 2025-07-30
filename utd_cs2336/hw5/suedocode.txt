@@ -1,0 +1,101 @@
+public class hw11_2
+
+    // main
+        // Person person
+        // Student student
+        // Employee employee 
+        // Faculty faculty 
+        // Staff staff
+
+        // println(person)
+        // println(student)
+        // println(employee)
+        // println(faculty)
+        // println(staff)
+
+    // class Person
+        // fields: name, address, phoneNumber all strings
+
+    // class Student extends Person
+        // fields: classStatus of type ClassStatus (enum)
+
+    // class Employee extends Person
+        // fields: office of type String, salary of type double, dateHired of type MyDate
+
+    // class Faculty extends Employee
+        // fields: officeHours, rank both of type String
+
+    // class Staff extends Employee
+        // fields: title of type String
+
+    // enum ClassStatus 
+        // constants: FRESHMAN, SOPHOMORE, JUNIOR, SENIOR
+
+
+public class hw11_3
+
+    // main 
+        // Account account
+        // Savings savings
+        // Checking checking
+        // print account
+        // print savings
+        // print checking
+
+    // class Account
+        // implemented just like 9.7 Account class including
+        // override toString()
+            // return this.getClass().toString().substring(6) // index 6 removes "class " leaving class name
+
+    // class Checking extends Account
+        // double overdraftAmount
+        // override withdraw
+            // limit the overdraft amount
+
+    // class Savings extends Account
+        // override withdraw
+            // stop any withdraws that are greater than account balance
+
+public class hw11_13
+
+    // main
+        // create ArrayList list
+        // prompt user for 10 values separated by a space
+        // removeDuplicate(list)
+        // display list
+
+    // public static void removeDuplicate(ArrayList<Integer> list)
+        // make an ArrayList of integers called localList
+        // loop over list adding each element that is unique to localList
+            // check if an element is non-unique and if it is remove it from list using the index
+
+public class hw11_10
+
+    // main
+        // create MyStack mystack
+        // push 5 strings onto mystack
+        // pop each string off and display in the order they pop off 
+        
+    // class MyStack extends ArrayList
+        // push(String str)
+            // add(str, 0)
+
+        // pop()
+            // return remove(0) 
+
+public class hw13_3
+
+    // public static void sort(ArrayList<Number> list)
+        // get size of list
+        // loop through list 
+            // loop through all the numbers before the index of previous loop 
+                // if inner loop index is larger than the next element in the list swap elements
+
+public class hw13_5
+
+    // class GeometricObject implements Comparable
+        // Override compareTo to return comparison of current object's area to argument's area
+        // max(GeometricObject obj1, GeometricObject obj2)
+            // return obj1 if obj1.compareTo(obj2) is 1
+            // return obj2 if obj1.compareTo(obj2) is -1
+            // return null if obj1.compareTo(Obj2) is 0
