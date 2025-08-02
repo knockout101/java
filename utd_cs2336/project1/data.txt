@@ -1,0 +1,8 @@
+46359
+A Content-Based Retrieval System for Medical Images
+John Anderson
+4
+database
+image-retrieval
+content-based
+medical

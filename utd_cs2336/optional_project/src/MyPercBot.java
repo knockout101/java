@@ -8,9 +8,9 @@ public class MyPercBot extends PircBot {
         MyPercBot bot = new MyPercBot();
         // Set the bot's nickname
         bot.setName("MyPircBot");
-        bot.connect("irc.us.libera.chat");
-        bot.joinChannel("#CS2336");
-        bot.sendMessage("#CS2336", "Hello, I am MyPircBot! Type !help for commands.");
+        bot.connect("irc.libera.chat");
+        bot.joinChannel(target);
+        bot.sendMessage(target, "Hello, I am MyPircBot! Type !help for commands.");
     }
 
     public MyPercBot() {
