@@ -50,6 +50,44 @@ public class BinarySearchTree <E extends Comparable<E>> {
         inOrder(root, "", true, printArticle);
     }
 
+    public void preOrder(boolean printArticle) {
+        System.out.println("\n===================================");
+        System.out.println("PreOrder Traversal of BST:");
+        preOrder(root, "", true, printArticle);
+    }
+
+    public void postOrder(boolean printArticle) {
+        System.out.println("\n===================================");
+        System.out.println("PostOrder Traversal of BST:");
+        postOrder(root, "", true, printArticle);
+    }
+
+    private void postOrder(TreeNode<E> node, String prefix, boolean isLeft, boolean printArticle) {
+        if(node != null) {
+            postOrder(node.left, prefix + (isLeft ? "│   " : "    "), true, printArticle);
+            postOrder(node.right, prefix + (isLeft ? "    " : "│   "), false, printArticle);
+            System.out.println(prefix + (isLeft ? "├── " : "└── ") + node.element);
+            if(printArticle) {
+                for(Article article : node.head) 
+                    System.out.println(article);
+                System.out.println();
+            }
+        }
+    }
+
+    private void preOrder(TreeNode<E> node, String prefix, boolean isLeft, boolean printArticle) {
+        if(node != null) {
+            System.out.println(prefix + (isLeft ? "├── " : "└── ") + node.element);
+            if(printArticle) {
+                for(Article article : node.head) 
+                    System.out.println(article);
+                System.out.println();
+            }
+            preOrder(node.left, prefix + (isLeft ? "│   " : "    "), true, printArticle);
+            preOrder(node.right, prefix + (isLeft ? "    " : "│   "), false, printArticle);
+        }
+    }
+
     private void inOrder(TreeNode<E> node, String prefix, boolean isLeft, boolean printArticle) {
         if(node != null) {
             inOrder(node.left, prefix + (isLeft ? "│   " : "    "), true, printArticle);

@@ -23,11 +23,11 @@ public class BSTProjectSum25 {
             String keyword = "";
 
             if(choice == 1) // PreOrder Traversal
-                ;
+                bst.preOrder(false);
             else if(choice == 2) // InOrder Traversal
                 bst.inOrder(false);
             else if(choice == 3) // PostOrder Traversal
-                ;
+                bst.postOrder(false);
             else if(choice == 4) { // Search for a keyword
                 System.out.print("Enter keyword to search: ");
                 keyword = keyboard.nextLine();
@@ -45,7 +45,6 @@ public class BSTProjectSum25 {
     }
 
     public static void readBookRecords(String fileName) {
-         
         try(BufferedReader dataInput = new BufferedReader(new FileReader(fileName))) {
             while(dataInput.ready()) {
                 int ID = Integer.parseInt(dataInput.readLine());
