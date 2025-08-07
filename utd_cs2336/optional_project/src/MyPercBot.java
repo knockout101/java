@@ -49,5 +49,4 @@ public class MyPercBot extends PircBot {
             sendMessage(channel, "I don't understand that command.");
         }
     }
-
 }

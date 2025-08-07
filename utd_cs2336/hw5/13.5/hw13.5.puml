@@ -1,0 +1,12 @@
+@startuml 
+
+skinparam classAttributeIconSize 0
+hide circle
+
+class GeometricObject <<Comparable>> {
+    -area: double
+    +compareTo(GeometricObject obj): int <<Override>>
+    +{static} max(GeometricObject obj1, GeometricObject obj2)
+}
+
+@enduml

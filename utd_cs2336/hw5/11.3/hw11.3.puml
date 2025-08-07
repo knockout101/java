@@ -1,0 +1,38 @@
+@startuml 
+
+skinparam classAttributeIconSize 0
+hide circle
+
+class Account {
+    -id: int {default = 0}
+    -balance: double {default = 0.0}
+    -annualInterestRate: double {default = 0.0}
+    -dateCreated: Date
+    +Account()
+    +Account(id: int, initialBalance: double)
+    +getId(): int
+    +getBalance(): double
+    +getAnnualInterestRate(): double
+    +getDateCreated(): Date
+    +getMonthlyInterestRate(): double
+    +setAnnualInterestRate(annualInterestRate: double): void
+    +setBalance(balance: double): void
+    +setAnnualInterestRate(annualInterestRate: double): void
+    +withdraw(amount: double): boolean
+    +deposit(amount: double): void
+    +toString(): String <<Override>>
+}
+
+class Checking {
+    -overdraftLimit: double
+    +withdraw(amount: double): void <<Override>>
+}
+
+class Savings {
+    +withdraw(amount: double): void <<Override>>
+}
+
+Account <-- Checking
+Account <-- Savings
+
+@enduml
