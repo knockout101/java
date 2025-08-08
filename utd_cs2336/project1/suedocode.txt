@@ -1,0 +1,20 @@
+/*
+    - Use Quadratic probing strategy
+
+    - need a node class that contains a keyword String and a LinkedList for storing articles for each keyword 
+
+    - Read through the file counting the key words (assuming it is an ordered list of information)
+        - use the number of keys to calculate the table size by multiplying it by 2 and finding the next prime number
+    
+    - Create HashMap of the table size by value constructor
+        - assign the table size to the HashMap
+
+    - Read file again for each article, collect the article information into an Article class
+        - for each keyword make a node within the hash table using quadratic probing and add the article to the node's linked list
+    
+    - If there is a collision, using quadratic probing, find the next available index by adding an arbitrary value i squared
+
+    - Search using quadratic probing, hash the node's keyword and find the next available using the same method as above
+
+    - Displaying Articles by keyword will require searching, finding the keyword, then iterating over the linked list, displaying each article's information
+*/
