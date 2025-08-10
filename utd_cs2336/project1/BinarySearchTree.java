@@ -1,47 +1,52 @@
 import java.util.LinkedList;
 
+
 public class BinarySearchTree <E extends Comparable<E>> {
     private TreeNode<E> root;
     private int size;
 
-    public void insert(E keyword, Article article) {
-        if(root == null) {
-            root = new TreeNode<>(keyword);
-            root.head.addFirst(article);
-        } else {
-            TreeNode<E> current = search(keyword);
-            if(current != null) {
-                if(keyword.compareTo(current.element) < 0) {
-                    current.left = new TreeNode<>(keyword);
-                    current.left.head.addFirst(article);
-                }
-                else if (keyword.compareTo(current.element) > 0) {
-                    current.right = new TreeNode<>(keyword);
-                    current.right.head.addFirst(article);
-                } else {
-                    current.head.addFirst(article); // Add article to the linked list
-                }
-            }
-        }
-
+    public TreeNode<E> getRoot() {
+        return root;
     }
 
-    public TreeNode<E> search(E keyword) {
-        TreeNode<E> parent = null;
-        TreeNode<E> current = root;
-        while(current != null) {
-            int cmp = keyword.compareTo(current.element);
-            if(cmp < 0) {
-                parent = current;
-                current = current.left;
-            } else if(cmp > 0) {
-                parent = current;
-                current = current.right;
-            } else {
-                return current; // Found the node
+    public void insert(E keyword, Article article) {
+        // Insert keyword and article into the BST recursively
+        if(root == null) {
+            root = new TreeNode<E>(keyword);
+            root.head.addFirst(article);
+        } else {
+            TreeNode<E> current = search(root, keyword); // recursive search
+            if(!current.element.equals(keyword)) {
+                if (keyword.compareTo(current.element) < 0) {
+                    current.left = new TreeNode<>(keyword);
+                    current.left.head.addFirst(article);
+                } else if (keyword.compareTo(current.element) > 0) {
+                    current.right = new TreeNode<>(keyword);
+                    current.right.head.addFirst(article);
+                } 
+            }
+            else {
+                current.head.addFirst(article); // Add article to the linked list
             }
         }
-        return parent; // Not found
+    }
+
+    public TreeNode<E> search(TreeNode<E> node, E keyword) {
+        // Search for the keyword in the BST recursively
+        if(node.element.equals(keyword)) {
+            return node;
+        }
+        if(keyword.compareTo(node.element) < 0) {
+            if(node.left == null) {
+                return node;
+            }
+            return search(node.left, keyword);
+        } else {
+            if(node.right == null) {
+                return node; 
+            }
+            return search(node.right, keyword);
+        }
     }
 
     public void inOrder(boolean printArticle) {
@@ -64,9 +69,9 @@ public class BinarySearchTree <E extends Comparable<E>> {
 
     private void postOrder(TreeNode<E> node, String prefix, boolean isLeft, boolean printArticle) {
         if(node != null) {
-            postOrder(node.left, prefix + (isLeft ? "│   " : "    "), true, printArticle);
-            postOrder(node.right, prefix + (isLeft ? "    " : "│   "), false, printArticle);
-            System.out.println(prefix + (isLeft ? "├── " : "└── ") + node.element);
+            postOrder(node.left, prefix, true, printArticle);
+            postOrder(node.right, prefix, false, printArticle);
+            System.out.println("\t" + prefix + node.element);
             if(printArticle) {
                 for(Article article : node.head) 
                     System.out.println(article);
@@ -77,27 +82,27 @@ public class BinarySearchTree <E extends Comparable<E>> {
 
     private void preOrder(TreeNode<E> node, String prefix, boolean isLeft, boolean printArticle) {
         if(node != null) {
-            System.out.println(prefix + (isLeft ? "├── " : "└── ") + node.element);
+            System.out.println("\t" + prefix + node.element);
             if(printArticle) {
                 for(Article article : node.head) 
                     System.out.println(article);
                 System.out.println();
             }
-            preOrder(node.left, prefix + (isLeft ? "│   " : "    "), true, printArticle);
-            preOrder(node.right, prefix + (isLeft ? "    " : "│   "), false, printArticle);
+            preOrder(node.left, prefix, true, printArticle);
+            preOrder(node.right, prefix, false, printArticle);
         }
     }
 
     private void inOrder(TreeNode<E> node, String prefix, boolean isLeft, boolean printArticle) {
         if(node != null) {
-            inOrder(node.left, prefix + (isLeft ? "│   " : "    "), true, printArticle);
-            System.out.println(prefix + (isLeft ? "├── " : "└── ") + node.element);
+            inOrder(node.left, prefix, true, printArticle);
+            System.out.println("\t" + prefix + node.element);
             if(printArticle) {
                 for(Article article : node.head) 
                     System.out.println(article);
                 System.out.println();
             }
-            inOrder(node.right, prefix + (isLeft ? "    " : "│   "), false, printArticle);
+            inOrder(node.right, prefix, false, printArticle);
         }
     }
 }

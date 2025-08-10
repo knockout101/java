@@ -21,6 +21,7 @@ public class BSTProjectSum25 {
 
             choice = keyboard.nextInt();
             String keyword = "";
+            keyboard.nextLine(); // Consume the newline character
 
             if(choice == 1) // PreOrder Traversal
                 bst.preOrder(false);
@@ -34,6 +35,16 @@ public class BSTProjectSum25 {
                 System.out.println("Searching for keyword: " + keyword);
                 // Search logic will be implemented here
                 // if the keyword is found, print the keyword and its articles
+                TreeNode<String> searchResult = bst.search(bst.getRoot(), keyword);
+                if(!searchResult.element.equals(keyword)) {
+                    System.out.println("Keyword not found.");
+                } else {
+                    System.out.println("Keyword found: " + searchResult.element);
+                    for (Article article : searchResult.head) {
+                        System.out.println(article);
+                    }
+                }
+                
             } else if(choice == 5) {
                 System.out.println("Exiting the program. Goodbye!");
             } else {
@@ -54,7 +65,6 @@ public class BSTProjectSum25 {
                 
                 Article article = new Article(ID, title, author);
 
-                System.out.print("Keyword: ");
                 for(int i = 0; i < numKeys; i++) {
                     bst.insert(dataInput.readLine(), article);
                 }
