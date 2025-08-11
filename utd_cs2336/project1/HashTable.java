@@ -18,7 +18,7 @@ public class HashTable { // replaces BinarySearchTree.java and rename BSTProject
 	    return hash % SIZE;
 	}
 	
-	private int findSlotQuadtraticProbing(String key) {
+	private int findSlotQuadraticProbing(String key) {
 	    int index = hash(key);
 	    int i = 1;
 	    while (table[index] != null && !table[index].key.equals(key)) {
@@ -33,7 +33,7 @@ public class HashTable { // replaces BinarySearchTree.java and rename BSTProject
 	
 	public void put(String key, Article value) {
 	    // Add the try catch block
-	    int index = findSlotQuadtraticProbing(key);
+	    int index = findSlotQuadraticProbing(key);
 	    if (table[index] == null) {
 	        table[index] = new Entry(key, value);
 	    } else {
@@ -42,7 +42,7 @@ public class HashTable { // replaces BinarySearchTree.java and rename BSTProject
 	}
 	
 	public int get(String key) {
-	    int index = findSlotQuadtraticProbing(key);
+	    int index = findSlotQuadraticProbing(key);
 	    if (table[index] != null && table[index].key.equals(key)) {
 	        return index;
 	    }
